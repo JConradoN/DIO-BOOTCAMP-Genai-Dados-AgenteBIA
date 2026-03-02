@@ -1,89 +1,53 @@
 # DIO-BOOTCAMP-Genai-Dados-AgenteBIA
-🏦 BIA: Inteligência Artificial de Investimentos (Bradesco & Graham)
-BIA é uma assistente de voz inteligente inspirada na atendente virtual do Bradesco, mas com um "cérebro" treinado na filosofia de Benjamin Graham (Value Investing). O projeto demonstra a integração de tecnologias de ponta para criar uma experiência de consultoria financeira ágil, segura e vocalizada.
+🏦 Agente BIA: Inteligência Artificial de Investimentos (Bradesco & Graham)
+Este repositório apresenta o desenvolvimento da BIA, uma assistente de voz inteligente criada como projeto prático para o Bootcamp de GenAI da DIO. O agente simula uma consultora de investimentos do Bradesco, operando sob as diretrizes da filosofia de Value Investing de Benjamin Graham.
 
-📖 Sobre o Projeto
-Este projeto foi desenvolvido como parte de um desafio prático de IA Conversacional. O objetivo é simular um atendimento bancário onde a IA:
+🎯 Objetivo do Projeto
+O objetivo principal foi construir um pipeline completo de IA conversacional (Voz-para-Texto e Texto-para-Voz) que não apenas transcreve áudio, mas aplica um contexto de negócio rígido e especializado para oferecer recomendações de investimentos seguras e fundamentadas em análise fundamentalista.
 
-Escuta o usuário através do microfone.
+🚀 Evolução e Arquitetura do Código
+O projeto está estruturado em versões que demonstram o amadurecimento da lógica e da experiência do usuário:
 
-Transcreve a fala com alta precisão usando o modelo Whisper.
+AgenteBIA_v001.py: Implementação do ciclo básico de STT (Speech-to-Text) via OpenAI Whisper e TTS (Text-to-Speech) via gTTS.
 
-Processa a intenção baseando-se em um contexto rígido de consultor financeiro.
+AgenteBIA_v002.py: Introdução da persona "Consultor Bradesco" e implementação de memória de curto prazo para manter o contexto da conversa.
 
-Responde via voz sintetizada com recomendações diretas de ativos (CDB, LCI, LCA e Ágora).
+AgenteBIA_v003.py: Adição de comandos de voz para encerramento de sessão e melhorias na captação de áudio ambiente.
 
-🛠️ Tecnologias e Dependências
-Para rodar este projeto, as seguintes bibliotecas são necessárias:
+AgenteBIA_v004.py (Versão Final): Refinamento de UX com saudação vocal inicial da BIA, restrição de verbosidade para respostas diretas e otimização de tokens.
 
-OpenAI SDK: Interface com os modelos GPT-4o-mini e Whisper.
+🛠️ Tecnologias Utilizadas
+Linguagem: Python 3.10+
 
-SpeechRecognition: Captura de áudio do hardware.
+Modelos de IA: OpenAI GPT-4o-mini (Processamento) e Whisper-1 (Transcrição).
 
-PyAudio: Gerenciamento de streams de áudio.
+Voz: gTTS (Google Text-to-Speech) para síntese e SpeechRecognition para captura.
 
-gTTS (Google Text-to-Speech): Conversão de texto em áudio MP3.
+Reprodução: Playsound para saída de áudio em tempo real.
 
-Playsound: Reprodução multiplataforma dos arquivos de áudio.
-
-📈 Changelog (Histórico de Evolução)
-O projeto está organizado em 4 fases, refletindo o aprendizado e refinamento do código:
-
-v1.0 - Fundação (Projeto 1.py)
-Implementação do loop básico de STT (Speech-to-Text) e TTS (Text-to-Speech).
-
-Integração com a nova sintaxe da API OpenAI (v1.0+).
-
-Configuração do reconhecimento de ruído ambiente para melhorar a captura.
-
-v2.0 - Especialização e Memória (Projeto 2.py)
-Criação do System Prompt focado em Benjamin Graham e Bradesco.
-
-Implementação de Histórico de Conversa, permitindo que a IA mantenha o contexto de perguntas anteriores na mesma sessão.
-
-v3.0 - Controle de Sessão (Projeto 3.py)
-Adição de filtros de saída por voz (Keywords de encerramento).
-
-Aumento do tempo de limite de frase (phrase_time_limit) para permitir perguntas complexas.
-
-Tratamento de exceções para capturas de áudio vazias.
-
-v4.0 - UX e Polimento (Projeto 4.py)
-Introdução Vocal: BIA se apresenta formalmente ao iniciar.
-
-Restrição de Verbosidade: Ajuste no prompt para respostas curtas (máx. 6 frases) e diretas.
-
-Ajuste de Temperatura: Redução da temperatura para 0.5, garantindo respostas técnicas e factuais.
-
-Gestão de Arquivos: Nomes dinâmicos para arquivos temporários de áudio para evitar conflitos de leitura/escrita.
-
-🚀 Como Instalar e Rodar
+📦 Como Executar
 Clone o repositório:
 
 Bash
-git clone https://github.com/seu-usuario/bia-investimentos-ia.git
-cd bia-investimentos-ia
+git clone https://github.com/JConradoN/DIO-BOOTCAMP-Genai-Dados-AgenteBIA/
 Instale as dependências:
 
 Bash
 pip install openai speechrecognition gtts playsound==1.2.2 pyaudio
-Variáveis de Ambiente:
-Não exponha sua chave no código. No Windows, configure assim:
+Configure sua variável de ambiente OPENAI_API_KEY.
 
-DOS
-setx OPENAI_API_KEY "sua_chave_aqui"
-Execução:
+Execute a versão final:
 
 Bash
-python "Projeto 4.py"
-⚖️ Licença e Créditos
-Projeto desenvolvido como desafio para o Bootcamp DIO.
+python AgenteBIA_v004.py
+👨‍💻 Autor
+João Conrado V. Nogueira
 
-IA: OpenAI (GPT & Whisper).
+LinkedIn: Conrado Nogueira
 
-Voz: Google TTS.
+Bootcamp: Geração de IA e Dados - DIO
 
-Metodologia: Benjamin Graham (The Intelligent Investor).
+Nota: Este projeto possui fins estritamente educacionais e não constitui recomendação financeira real.
 
 💡 Próximo Desafio: Interface Web
 Com o motor Python finalizado, o próximo passo é a criação de um Dashboard em JavaScript para exibir o histórico de investimentos sugerido pela BIA visualmente.
