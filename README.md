@@ -39,11 +39,14 @@ Configure sua variável de ambiente OPENAI_API_KEY.
 Execute a versão final:
 
 Bash
+
 python AgenteBIA_v004.py
+
 👨‍💻 Autor
+
 João Conrado V. Nogueira
 
-LinkedIn: Conrado Nogueira
+LinkedIn: Conrado Nogueira: https://www.linkedin.com/in/conrado-nogueira-155968244/
 
 Bootcamp: Geração de IA e Dados - DIO
 
