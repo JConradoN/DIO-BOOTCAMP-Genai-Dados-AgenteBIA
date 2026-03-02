@@ -1,0 +1,15 @@
+# Arquivos de áudio gerados pelo programa
+*.mp3
+*.wav
+resposta_consultor.mp3
+boas_vindas.mp3
+temp_audio.wav
+
+# Python e IDEs
+__pycache__/
+.vscode/
+.idea/
+.env
+
+# Chaves de API (Caso use arquivo .env)
+api_key.txt
